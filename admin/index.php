@@ -16,28 +16,9 @@ $apartments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Quản lý Chung cư - Admin</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f4f7f6; padding: 20px; }
-        .admin-container { max-width: 1000px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h2 { color: #003366; text-align: center; margin-bottom: 25px; font-size: 28px; }
-        .dashboard-cards { display: flex; gap: 20px; margin-bottom: 30px; }
-        .card-stat { flex: 1; background: #fff; padding: 20px; border-radius: 8px; border-left: 5px solid #003366; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        .card-stat h3 { margin: 0 0 10px 0; color: #666; font-size: 16px; text-transform: uppercase; }
-        .card-stat p { margin: 0; font-size: 32px; font-weight: bold; color: #003366; }
-        .header-actions { display: flex; justify-content: space-between; margin-bottom: 20px; border-top: 1px solid #eee; padding-top: 20px; }
-        .btn { text-decoration: none; padding: 10px 15px; border-radius: 4px; color: white; font-weight: bold; border: none; cursor: pointer; display: inline-block; }
-        .btn-add { background: #28a745; }
-        .btn-edit { background: #ffc107; color: #333; }
-        .btn-delete { background: #dc3545; }
-        .btn-home { background: #003366; }
-        .btn-contact { background: #17a2b8; margin-left: 10px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 12px; border: 1px solid #ddd; text-align: left; vertical-align: middle; }
-        th { background-color: #003366; color: white; }
-        img.thumb { width: 80px; height: 60px; object-fit: cover; border-radius: 4px; }
-    </style>
+    <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
-<body>
+<body class="admin-page admin-dashboard">
     <div class="admin-container">
         <h2>Bảng Quản Trị Hệ Thống</h2>
         
@@ -46,7 +27,7 @@ $apartments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <h3>Tổng Số Dự Án</h3>
                 <p><?php echo $total_apt; ?></p>
             </div>
-            <div class="card-stat" style="border-left-color: #17a2b8;">
+            <div class="card-stat card-stat-contact">
                 <h3>Khách Hàng Liên Hệ</h3>
                 <p><?php echo $total_contact; ?></p>
             </div>
@@ -59,7 +40,7 @@ $apartments = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div>
                 <a href="add.php" class="btn btn-add">+ Thêm Dự Án</a>
-                <a href="logout.php" class="btn btn-delete" style="margin-left: 10px;">Đăng Xuất</a>
+                <a href="logout.php" class="btn btn-delete logout-btn">Đăng Xuất</a>
             </div>
         </div>
         
