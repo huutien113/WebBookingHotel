@@ -54,22 +54,9 @@ if (!$apt) {
 <head>
     <meta charset="UTF-8">
     <title>Sửa Thông Tin Dự Án</title>
-    <style>
-        body { font-family: Arial, sans-serif; background: #f4f7f6; padding: 20px; }
-        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h2 { color: #003366; text-align: center; margin-bottom: 20px; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; font-weight: bold; margin-bottom: 5px; color: #333; }
-        input[type="text"], select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        input[type="file"] { padding: 5px 0; }
-        .current-image { width: 150px; border-radius: 4px; display: block; margin-top: 10px; }
-        button { background: #ffc107; color: #333; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%; font-weight: bold; transition: 0.3s; }
-        button:hover { background: #e0a800; }
-        .back-link { display: block; text-align: center; margin-top: 15px; text-decoration: none; color: #555; }
-        .back-link:hover { color: #003366; font-weight: bold; }
-    </style>
+    <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
-<body>
+<body class="admin-page admin-form admin-form-edit">
     <div class="form-container">
         <h2>Sửa Thông Tin Dự Án</h2>
         <form action="edit.php?id=<?php echo $apt['id']; ?>" method="POST" enctype="multipart/form-data">
@@ -110,7 +97,7 @@ if (!$apt) {
                     <img src="../assets/images/<?php echo htmlspecialchars($apt['image_url']); ?>" class="current-image" alt="Current Image">
                 <?php endif; ?>
             </div>
-            <button type="submit">Cập Nhật Dự Án</button>
+            <button type="submit" class="form-submit">Cập Nhật Dự Án</button>
         </form>
         <a href="index.php" class="back-link">Quay lại Bảng quản trị</a>
     </div>
