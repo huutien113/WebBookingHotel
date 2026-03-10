@@ -28,7 +28,7 @@ $apartments = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <p><?php echo $total_apt; ?></p>
             </div>
             <div class="card-stat card-stat-contact">
-                <h3>Khách Hàng Liên Hệ</h3>
+                <h3>Số Khách Hàng Đã Liên Hệ</h3>
                 <p><?php echo $total_contact; ?></p>
             </div>
         </div>
